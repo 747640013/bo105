@@ -1357,6 +1357,24 @@ setlistener("/sim/signals/fdm-initialized", func {
 			crash(!n.getBoolValue())
 	});
 
+	# 自定义引擎启动属性为 “/controls/engines/engine/arm”
+	setlistener("/controls/engines/engine/arm", func(n) {
+		val = n.getValue();
+		if(val==1.0){
+			print("Engine start");
+			startup();
+		}
+	});
+
+	# 自定义引擎关闭属性为 “/controls/engines/engine/disarm”
+	setlistener("/controls/engines/engine/disarm", func(n) {
+                val = n.getValue();
+		if(val==1.0){
+			print("Engine shutdown");
+			shutdown();
+		}
+	});
+
 	main_loop();
 	if (devel and quickstart)
 		engines.quickstart();

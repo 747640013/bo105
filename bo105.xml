@@ -127,10 +127,10 @@
 
 <cockpit x="-1.06" y="-0.4" z="0.65"/>
 
-<fuselage ax="-.25" ay="0" az="-.07" bx="-4.05" by="0" bz="-.07" cx="5" 
+<fuselage ax="-.25" ay="0" az="-.07" bx="-4.05" by="0" bz="-.07" cx="5"
           width="1.92" taper="0.95" midpoint="0.5" idrag="0"/>
 
-<fuselage ax="-4.05" ay="0" az="0.4" bx="-7.60" by="0" bz=".51" cz="0.25" cx="2" 
+<fuselage ax="-4.05" ay="0" az="0.4" bx="-7.60" by="0" bz=".51" cz="0.25" cx="2"
           width="0.47" taper="0.9" midpoint="0" idrag="0.0"/>
 
 
