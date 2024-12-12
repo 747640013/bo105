@@ -8,20 +8,6 @@
 			#print("LOAD bo105 ", cmdarg().getPath());
 			var self = cmdarg();
 
-			#--begin compat-- (load random variant for fg/plib)
-			var dir = getprop("/sim/fg-root") ~ "/Aircraft/bo105/Models/Variants";
-			var files = [];
-			foreach (var file; directory(dir))
-				if (substr(file, -4) == ".xml")
-					append(files, file);
-
-			var filename = dir ~ "/" ~ files[rand() * size(files)];
-			var targetnode = self.getPath();
-			fgcommand("loadxml", props.Node.new({ filename: filename, targetnode: targetnode, }));
-			var mat = self.getNode("sim/model/bo105/material", 1);
-			mat.getNode("emblem/texture", 1).setValue("../../../Models/Fauna/cow.rgb");
-			#--end compat--
-
 			var emblem_in = self.getNode("sim/multiplay/generic/string[0]", 1);
 			var emblem_out = self.getNode("sim/model/bo105/material/emblem/texture", 1);
 
